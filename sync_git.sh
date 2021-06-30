@@ -1,20 +1,22 @@
 #!/bin/bash
 # SyncGit - Git Pull Script
-# Written by pcfeduardo
-# pcfeduardo@vdzen.com
+# Written by pcfeduardo <pcfeduardo@gmail.com>
 
 # To run script in background (if your webserver is nginx):
 # nohup runuser -l nginx -c '/bin/bash /directory/sync_git.sh' &
 
 # You can change this:
-REPO_DIR=( \
-			"/directory/of/your/project" \
-)
+# REPO_DIR=( \
+# 			"/directory/of/your/project" \
+# )
+
+REPO_FILE="repo_file.txt"
+REPO_DIR=`cat $REPO_FILE`
 
 startBanner(){
 	echo -e "\n\e[33m============================================================\e[0m"
 	echo -e "\e[33m(*) Starting $(date +"%d-%m-%Y %H:%M:%S")\e[0m"
-	echo -e "\e[33m(*) Script written by pcfeduardo@vdzen.com \e[0m\n\n"
+	echo -e "\e[33m(*) Script written by pcfeduardo@gmail.com \e[0m\n\n"
 }
 
 syncGit(){
